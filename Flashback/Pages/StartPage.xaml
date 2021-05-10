@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Flashback.Pages.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Flashback.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:Helpers.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!--BooleanToVisibilityConverter-->
+        <converters:BooleanToVisibilityConverter x:Name="BooleanToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid 
+        Background="{StaticResource BackgroundBrush}"
+        Transitions="{StaticResource EntranceTransitionCollection}">
+        <MediaElement
+            Source="/../Assets/Videos/start.mp4"
+            AutoPlay="True"
+            IsLooping="True"
+            Volume="0"
+            Stretch="UniformToFill"
+            Opacity="0.6"
+            />
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock
+                Text="    Ö Flashback"
+                FontSize="42"
+                FontFamily="ms-appx:///Assets/Fonts/Flashback.ttf#Signika"
+                HorizontalAlignment="Center"
+                Margin="24,0,24,8"/>
+            <TextBlock
+                Text="Make your memories last forever."
+                FontWeight="Light"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,36"/>
+            <Button
+                Content="New movie"
+                Click="{x:Bind StartPageViewModel.CreateProject}"
+                HorizontalAlignment="Stretch"/>
+            <!--<Button         
+                Click="{x:Bind StartPageViewModel.Continue}"
+                Content="Continue where I left"
+                IsEnabled="{x:Bind StartPageViewModel.IsContinueEnabled, Mode=OneWay}"
+                HorizontalAlignment="Stretch"
+                Margin="0,6,0,0"/>-->
+        </StackPanel>
+    </Grid>
+</Page>

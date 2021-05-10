@@ -1,0 +1,188 @@
+﻿<UserControl
+    x:Class="Flashback.Views.EffectsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Flashback.Views.Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:effects="using:Flashback.Effects"
+    xmlns:controls="using:Helpers.Controls"
+    xmlns:converters="using:Helpers.Converters"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <!--EffectCategoriesListViewItemStyle-->
+        <Style x:Key="EffectCategoriesListViewItemStyle" TargetType="ListViewItem">
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}" />
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="IsHoldingEnabled" Value="True"/>
+            <Setter Property="Padding" Value="12,0,12,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="{ThemeResource ListViewItemMinWidth}"/>
+            <Setter Property="MinHeight" Value="{ThemeResource ListViewItemMinHeight}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource MediumBackgroundBrush}"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter
+          ContentTransitions="{TemplateBinding ContentTransitions}"
+          SelectionCheckMarkVisualEnabled="True"
+          CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+          CheckBoxBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+          DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}"
+          DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}"
+          FocusBorderBrush="{ThemeResource SystemControlForegroundAltHighBrush}"
+          FocusSecondaryBorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}"
+          PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}"
+          PointerOverBackground="{ThemeResource SystemControlHighlightListLowBrush}"
+          PointerOverForeground="{ThemeResource SystemControlHighlightAltBaseHighBrush}"
+          SelectedBackground="{ThemeResource SystemControlHighlightListAccentLowBrush}"
+          SelectedForeground="{ThemeResource SystemControlHighlightAltBaseHighBrush}"
+          SelectedPointerOverBackground="{ThemeResource SystemControlHighlightListAccentMediumBrush}"
+          PressedBackground="{ThemeResource SystemControlHighlightListMediumBrush}"
+          SelectedPressedBackground="{ThemeResource SystemControlHighlightListAccentHighBrush}"
+          DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}"
+          DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}"
+          ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}"
+          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+          ContentMargin="{TemplateBinding Padding}"
+          CheckMode="Inline"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--BoolToVisibilityConverter-->
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid
+        Transitions="{StaticResource EntranceTransitionCollection}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*" MaxHeight="280"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*" MaxWidth="480"/>
+        </Grid.ColumnDefinitions>
+        
+
+        <!--preview element-->
+        <Grid 
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Background="{StaticResource SystemControlBackgroundChromeMediumBrush}"
+            Margin="12"
+            BorderBrush="{StaticResource MediumBackgroundBrush}"
+            BorderThickness="4">
+            <MediaElement
+                x:Name="PreviewMediaElement"
+                Loaded="PreviewMediaElement_Loaded"
+                MediaOpened="PreviewMediaElement_MediaOpened"
+                AutoPlay="True"
+                IsLooping="True"
+                Volume="0"
+                AreTransportControlsEnabled="False"
+                Stretch="Uniform">
+                <MediaElement.TransportControls>
+                    <MediaTransportControls Style="{StaticResource LightMediaTransportControlsStyle}"/>
+                </MediaElement.TransportControls>
+            </MediaElement>
+            <controls:ProgressOverlay
+                ProgressObject="{x:Bind PreviewMediaElementProgressObject, Mode=OneWay}"
+                BackgroundOpacity="1"
+                />
+        </Grid>
+
+        <!--Current effect preferences-->
+        <Grid
+            x:Name="SelectedEffectControl"
+            Grid.Column="2"/>
+
+        <!--Gridlines-->
+        <Grid
+            Grid.Column="1"
+            Background="{StaticResource MediumBackgroundBrush}"/>
+        <Grid
+            Grid.ColumnSpan="3"
+            Grid.Row="1"
+            Background="{StaticResource MediumBackgroundBrush}"/>
+
+        <!--Categories-->
+        <SplitView
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            OpenPaneLength="200"
+            PaneBackground="Transparent"
+            IsPaneOpen="True"
+            DisplayMode="CompactInline">
+            <!--Pane-->
+            <SplitView.Pane>
+                <ListView
+                    x:Name="EffectCategoriesListView"
+                    ItemsSource="{x:Bind ProjectViewModel.EffectReferenceCategories, Mode=OneWay}"
+                    Loaded="EffectCategoriesListView_Loaded"              
+                    ItemContainerStyle="{StaticResource EffectCategoriesListViewItemStyle}"
+                    BorderThickness="0,0,1,0"
+                    BorderBrush="{StaticResource MediumBackgroundBrush}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" Margin="4"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </SplitView.Pane>
+            
+            <!--Content-->            
+            <GridView
+                x:Name="EffectsGridView"
+                ItemsSource="{Binding ElementName=EffectCategoriesListView, Path=SelectedItem.EffectReferences, Mode=OneWay}"
+                SelectionChanged="EffectsGridView_SelectionChanged">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            Padding="12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="32px"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid
+                                Width="100"
+                                Height="100"
+                                Margin="0,0,0,4"
+                                Background="{StaticResource MediumBackgroundBrush}"
+                                />
+                            <TextBlock
+                                Grid.Row="1"
+                                Text="{Binding Effect.Title, Mode=OneTime}"
+                                TextWrapping="WrapWholeWords"
+                                TextAlignment="Center"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="13epx"
+                                />
+                            <SymbolIcon
+                                Symbol="Accept"
+                                Foreground="{StaticResource AccentBrush}"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Center"
+                                Margin="12"
+                                Visibility="{Binding Effect.IsActive, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </SplitView>
+    </Grid>
+</UserControl>

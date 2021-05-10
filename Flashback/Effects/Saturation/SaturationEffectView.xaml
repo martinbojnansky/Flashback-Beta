@@ -1,0 +1,50 @@
+﻿<UserControl
+    x:Class="Flashback.Effects.Saturation.SaturationEffectView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Flashback.Effects.Saturation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Helpers.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    
+    <Grid
+        Transitions="{StaticResource EntranceTransitionCollection}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ScrollViewer
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto">
+            <StackPanel
+                Padding="{StaticResource PagePadding}">
+                <controls:Header
+                    HeaderText="Saturation"
+                    HeaderMargin="0"/>
+
+                <!--saturation-->
+                <StackPanel>
+                    <controls:Caption
+                        CaptionText="Saturation"
+                        CaptionMargin="0"/>
+                    <Slider
+                        Value="{x:Bind ViewModel.Saturation, Mode=TwoWay}"
+                        Minimum="0"
+                        Maximum="100"
+                        />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        
+        <CommandBar
+            Grid.Row="1">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Clear" Label="Reset" Click="{x:Bind ViewModel.Effect.ResetDefaultProperties}"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Grid>
+</UserControl>

@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{9078D034-30F3-4A87-9496-81C948C8E497}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Flashback</RootNamespace>
+    <AssemblyName>Flashback</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Flashback_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>25A9E7FA2ED989AD52B163840F2BE50C40544C00</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\SignikaBold.ttf" />
+    <Content Include="Assets\Fonts\Flashback.ttf" />
+    <None Include="Flashback_StoreKey.pfx" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\Adjustments\FlareEffect.cs" />
+    <Compile Include="Effects\Filters\InkwellEffect.cs" />
+    <Compile Include="Effects\Filters\Xpro2Effect.cs" />
+    <Compile Include="Effects\Filters\NormalEffect.cs" />
+    <Compile Include="Effects\Filters\AutoFixEffect.cs" />
+    <Compile Include="Effects\Adjustments\TemperatureAndTintEffectView.xaml.cs">
+      <DependentUpon>TemperatureAndTintEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\Adjustments\TemperatureAndTintEffect.cs" />
+    <Compile Include="Effects\Adjustments\HighlightsAndShadowsEffect.cs" />
+    <Compile Include="Effects\Adjustments\ContrastEffect.cs" />
+    <Compile Include="Effects\Adjustments\BrightnessEffect.cs" />
+    <Compile Include="Effects\Adjustments\StabilizationEffect.cs" />
+    <Compile Include="Effects\Adjustments\HighlightsAndShadowsEffectView.xaml.cs">
+      <DependentUpon>HighlightsAndShadowsEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\Borders\VignetteEffect.cs" />
+    <Compile Include="Effects\Filters\DreamEffect.cs" />
+    <Compile Include="Effects\Filters\MonoEffect.cs" />
+    <Compile Include="Effects\Filters\HipsterEffect.cs" />
+    <Compile Include="Effects\Filters\BoostEffect.cs" />
+    <Compile Include="Effects\Filters\CartoonEffect.cs" />
+    <Compile Include="Effects\Adjustments\SaturationEffect.cs" />
+    <Compile Include="Effects\Adjustments\SharpnessEffect.cs" />
+    <Compile Include="Effects\Titles\EndWatermarkEffect.cs" />
+    <Compile Include="Effects\Titles\ClosingTitlesEffect.cs" />
+    <Compile Include="Effects\Titles\FadeOutEffect.cs" />
+    <Compile Include="Effects\Titles\FadeInEffect.cs" />
+    <Compile Include="Effects\Titles\OpeningTitlesEffect.cs" />
+    <Compile Include="Effects\TwoWayIntensityEffectView.xaml.cs">
+      <DependentUpon>TwoWayIntensityEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\SwitchEffectView.xaml.cs">
+      <DependentUpon>SwitchEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\IntensityEffectView.xaml.cs">
+      <DependentUpon>IntensityEffectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\Effect.cs" />
+    <Compile Include="Effects\EffectReference.cs" />
+    <Compile Include="Effects\EffectReferenceCategory.cs" />
+    <Compile Include="Models\Clip.cs" />
+    <Compile Include="Models\ClipsDetailDataTemplateSelector.cs" />
+    <Compile Include="Models\MediaFile.cs" />
+    <Compile Include="Models\SlideshowClip.cs" />
+    <Compile Include="Models\SlideshowImage.cs" />
+    <Compile Include="Models\Track.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\VideoClip.cs" />
+    <Compile Include="Pages\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProjectPage.xaml.cs">
+      <DependentUpon>ProjectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProjectViewModel\Clips.cs" />
+    <Compile Include="ViewModels\ProjectViewModel\Composition.cs" />
+    <Compile Include="ViewModels\ProjectViewModel\Effects.cs" />
+    <Compile Include="ViewModels\ProjectViewModel\Music.cs" />
+    <Compile Include="ViewModels\ProjectViewModel\Project.cs" />
+    <Compile Include="ViewModels\ProjectViewModel\ProjectViewModel.cs" />
+    <Compile Include="ViewModels\StartPageViewModel.cs" />
+    <Compile Include="Views\FeedbackContentDialog.xaml.cs">
+      <DependentUpon>FeedbackContentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\ClipsView.xaml.cs">
+      <DependentUpon>ClipsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\EffectsView.xaml.cs">
+      <DependentUpon>EffectsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\MusicView.xaml.cs">
+      <DependentUpon>MusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\PreviewView.xaml.cs">
+      <DependentUpon>PreviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\SaveView.xaml.cs">
+      <DependentUpon>SaveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\SlideshowClipView.xaml.cs">
+      <DependentUpon>SlideshowClipView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\TitlesView.xaml.cs">
+      <DependentUpon>TitlesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\VideoClipView.xaml.cs">
+      <DependentUpon>VideoClipView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Flashback_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Videos\help.mp4" />
+    <Content Include="Assets\Tiles\Logo.svg" />
+    <Content Include="Assets\Tiles\NewStoreLogo.scale-100.png" />
+    <Content Include="Assets\Tiles\NewStoreLogo.scale-125.png" />
+    <Content Include="Assets\Tiles\NewStoreLogo.scale-150.png" />
+    <Content Include="Assets\Tiles\NewStoreLogo.scale-200.png" />
+    <Content Include="Assets\Tiles\NewStoreLogo.scale-400.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-125.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-150.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Tiles\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Square310x310Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Square310x310Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Square310x310Logo.scale-400.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Square71x71Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Square71x71Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-400.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\Videos\start.mp4" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Effects\Adjustments\TemperatureAndTintEffectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Effects\Adjustments\HighlightsAndShadowsEffectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Effects\TwoWayIntensityEffectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Effects\SwitchEffectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Effects\IntensityEffectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\HelpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FeedbackContentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\ClipsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\EffectsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\MusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\PreviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\SaveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\SlideshowClipView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\TitlesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Project\VideoClipView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AudioEffects\AudioEffects.csproj">
+      <Project>{6c71918b-7258-4591-97e4-d8fa192f19a6}</Project>
+      <Name>AudioEffects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{09390468-e0fd-4698-8f32-331be306c9b8}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoEffects\VideoEffects.csproj">
+      <Project>{983C0E9B-7F13-48BA-B274-68C0348BF48B}</Project>
+      <Name>VideoEffects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

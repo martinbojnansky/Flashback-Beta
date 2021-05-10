@@ -1,0 +1,49 @@
+﻿<ContentDialog
+    x:Class="Flashback.Views.FeedbackContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Flashback.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Helpers.Controls"
+    mc:Ignorable="d"
+    Title="Send feedback"
+    PrimaryButtonText="Send"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    IsPrimaryButtonEnabled="False"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    Width="450">
+
+    <Grid Width="400">
+        <StackPanel Margin="0,0,0,0">
+            <TextBlock
+                TextWrapping="Wrap"
+                FontSize="12"
+                Margin="0,8,0,8"
+                Text="We are happy to hear what you like or not, if you are experiencing any problems or just want to suggest new feature."/>
+            <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                <RadioButton x:Name="SuggestionRadioButton" IsChecked="True">Suggestion</RadioButton>
+                <RadioButton x:Name="ProblemRadioButton">Problem</RadioButton>
+            </StackPanel>
+            <TextBox 
+                x:Name="TitleTextBox"
+                PlaceholderText="Title" 
+                MaxLength="255" 
+                Margin="0,12,0,6"
+                TextChanged="TextBox_TextChanged"/>
+            <TextBox 
+                x:Name="DescriptionTextBox"
+                PlaceholderText="Description"
+                TextWrapping="Wrap"/>
+            <TextBlock
+                x:Name="ErrorTextBlock"
+                Text="Something went wrong. Please check your internet connection and try again."
+                TextWrapping="Wrap"
+                Foreground="Firebrick"
+                FontSize="12"
+                Margin="0,4,0,0"
+                Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</ContentDialog>
